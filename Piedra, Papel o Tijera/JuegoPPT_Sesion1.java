@@ -12,20 +12,21 @@ public class JuegoPPT_Sesion1{
     // Método privado con elección aleatoria para la computadora.
     private static String computadora(String[] opciones){
         Random Aleatorio = new Random();
-        int eleccion = Aleatorio.nextInt(3); // opciones.length
+        int eleccion = Aleatorio.nextInt(3);
         return opciones[eleccion];
     }
 
     // Método para volver a jugar.
     private static boolean jugarNuevamente(){
         System.out.println("\n¿Desea continuar? (s/n)\n    Sí → s\n    No → n");
-        Scanner usuario = new Scanner(System.in);
-        String respuesta = usuario.nextLine().toLowerCase();
+        Scanner Reinicio = new Scanner(System.in);
+        String respuesta = Reinicio.nextLine().toLowerCase();
+        Reinicio.close();
         if (respuesta.equals("s")){
-            System.out.println("\nContinuemos!");
+            System.out.println("\n¡Continuemos!");
             return true;
         } else {
-            System.out.println("\nGracias por jugar!");
+            System.out.println("\n¡Gracias por jugar!");
             return false;
         }
     }
@@ -36,9 +37,10 @@ public class JuegoPPT_Sesion1{
         System.out.println("Bienvenido al programa 'Piedra, papel o tijera', por favor ingrese su nombre: ");
         String nombre = usuario.nextLine();
         System.out.println("\nBienvenido al programa " + nombre + " a continuación siga las instrucciones para jugar: ");
+        System.out.println("\nInstrucciones del juego:\n    1. Elija una de las opciones como tu arma de ataque: 'Piedra', 'Papel', 'Tijera' o 'Aleatorio' si quieres que el destino sea tu aliadeo o enemigo.\n    2. El ordenador también elegirá una opción de forma alatoria y no basada en su elección, posibilitando así la opción de ganar o perder para el usuario.\n    3. Las reglas son las siguientes:\n        - Piedra vence a Tijera.\n        - Tijera vence a Papel.\n        - Papel vence a Piedra.\n    4. Si ambas elecciones son iguales, es un empate.\n    5. Puede jugar tantas veces como desee.\n\n¡Buena suerte!\n\n\n");
 
         // Creación de las posibles opciones.
-        String[] opciones = {"Piedra", "Papel", "Tijera, Aleatorio"};
+        String[] opciones = {"Piedra", "Papel", "Tijera", "Aleatorio"};
         
         // Creación de un objeto/"entidad", para leer la entrada del usuario
         Scanner partida = new Scanner(System.in);
@@ -64,11 +66,11 @@ public class JuegoPPT_Sesion1{
             // Determinamos los posibles caminos existentes para los resultados obtenidos.
             String resultados;
             if (jugador.equals(ordenador)){ /* También podemos ponerlo como "jugador == ordenador". */
-            resultados = "\nResultado final: Empate";
+                resultados = "\nResultado final: Empate";
             } else if ((jugador.equals("Piedra") && ordenador.equals("Tijera")) || (jugador.equals("Papel") && ordenador.equals("Piedra")) || (jugador.equals("Tijera") && ordenador.equals("Papel"))){
-                resultados = "\nResultado final: Ganaste";
+                resultados = "\nResultado final: ¡Ganaste!";
             } else{
-                resultados = "\nResultado final: Perdiste";
+                resultados = "\nResultado final: ¡Perdiste!";
             }
             
             // Muestreo de los resultados.
