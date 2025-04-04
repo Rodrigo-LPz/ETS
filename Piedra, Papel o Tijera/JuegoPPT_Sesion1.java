@@ -40,7 +40,7 @@ public class JuegoPPT_Sesion1{
         System.out.println("\nInstrucciones del juego:\n    1. Elija una de las opciones como tu arma de ataque: 'Piedra', 'Papel', 'Tijera' o 'Aleatorio' si quieres que el destino sea tu aliadeo o enemigo.\n    2. El ordenador también elegirá una opción de forma alatoria y no basada en su elección, posibilitando así la opción de ganar o perder para el usuario.\n    3. Las reglas son las siguientes:\n        - Piedra vence a Tijera.\n        - Tijera vence a Papel.\n        - Papel vence a Piedra.\n    4. Si ambas elecciones son iguales, es un empate.\n    5. Puede jugar tantas veces como desee.\n\n¡Buena suerte!\n\n\n");
 
         // Creación de las posibles opciones.
-        String[] opciones = {"Piedra", "Papel", "Tijera", "Agua", "Robot", "Aleatorio"};
+        String[] opciones = {"Piedra", "Papel", "Tijera", "Agua", "Humanoide", "Aleatorio"};
         
         // Creación de un objeto/"entidad", para leer la entrada del usuario
         Scanner partida = new Scanner(System.in);
@@ -67,7 +67,7 @@ public class JuegoPPT_Sesion1{
             String resultados;
             if (jugador.equals(ordenador)){ /* También podemos ponerlo como "jugador == ordenador". */
                 resultados = "\nResultado final: Empate";
-            } else if ((jugador.equals("Piedra") && (ordenador.equals("Tijera") || ordenador.equals("Agua"))) || (jugador.equals("Papel") && (ordenador.equals("Piedra") || ordenador.equals("Agua"))) || (jugador.equals("Tijera") && (ordenador.equals("Papel") || ordenador.equals("Robot"))) || (jugador.equals("Agua") && (ordenador.equals("Robot") || ordenador.equals("Tijera"))) || (jugador.equals("Robot") && (ordenador.equals("Piedra") || ordenador.equals("Papel")))){
+            } else if ((jugador.equals("Piedra") && (ordenador.equals("Tijera") || ordenador.equals("Agua"))) || (jugador.equals("Papel") && (ordenador.equals("Piedra") || ordenador.equals("Agua"))) || (jugador.equals("Tijera") && (ordenador.equals("Papel") || ordenador.equals("Humanoide"))) || (jugador.equals("Agua") && (ordenador.equals("Humanoide") || ordenador.equals("Tijera"))) || (jugador.equals("Humanoide") && (ordenador.equals("Piedra") || ordenador.equals("Papel")))){
                 resultados = "\nResultado final: ¡Ganaste!";
             } else{
                 resultados = "\nResultado final: ¡Perdiste!";
