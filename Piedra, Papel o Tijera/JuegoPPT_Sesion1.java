@@ -12,7 +12,7 @@ public class JuegoPPT_Sesion1{
     // Método privado con elección aleatoria para la computadora.
     private static String computadora(String[] opciones){
         Random Aleatorio = new Random();
-        int eleccion = Aleatorio.nextInt(3);
+        int eleccion = Aleatorio.nextInt(5);
         return opciones[eleccion];
     }
 
